@@ -5,30 +5,14 @@ class Song
 
   def initialize(name)
     @name = name
-  end
-
-  def new
     @@all << self
   end
 
-  def all
-    @@all << self.new
-  end
-
-  def name
-    @name
-  end
-
-  def artist
-    @artist
+  def self.all
+    @@all
   end
 
   def artist_name
-    if @artist
-      artist.name
-    else
-      nil
-    end
+    artist.name if artist
   end
-
 end
